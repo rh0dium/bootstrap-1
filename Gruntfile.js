@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             },
             bootstrap: {
                 src: ['js/transition.js', 'js/alert.js', 'js/button.js', 'js/carousel.js', 'js/collapse.js', 'js/dropdown.js', 'js/modal.js', 'js/tooltip.js', 'js/popover.js', 'js/scrollspy.js', 'js/tab.js', 'js/affix.js'],
-                dest: 'dist/js/<%= pkg.name %>.js'
+                dest: '../../sites/bootstrap_pivotalenergy_net/static/js/<%= pkg.name %>.js'
             }
         },
         jshint: {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
             },
             bootstrap: {
                 files: {
-                    'dist/css/bootstrap.css': ['less/bootstrap.less']
+                    '../../sites/bootstrap_pivotalenergy_net/static/css/bootstrap.css': ['less/bootstrap.less']
                 }
             },
             min: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                     compress: true
                 },
                 files: {
-                    'dist/css/bootstrap.min.css': ['less/bootstrap.less']
+                    '../../sites/bootstrap_pivotalenergy_net/static/css/bootstrap.min.css': ['less/bootstrap.less']
                 }
             }
         },
@@ -96,6 +96,16 @@ module.exports = function(grunt) {
                 files: 'less/*.less',
                 tasks: ['recess']
             }
+        },
+        copy: {
+            main: {
+                files: [ {
+                    expand: true,
+                    flatten: true,
+                    src: ['assets/font/*'],
+                    dest: '../../sites/bootstrap_pivotalenergy_net/static/font/',
+                    filter: 'isFile'} ]
+            }
         }
     });
 
@@ -108,6 +118,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-recess');
 
 
@@ -124,5 +135,5 @@ module.exports = function(grunt) {
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
 
     // Default task.
-    grunt.registerTask('default', ['test', 'dist']);
+    grunt.registerTask('default', ['test', 'dist', 'copy']);
 };
