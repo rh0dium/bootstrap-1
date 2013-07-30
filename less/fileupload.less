@@ -56,13 +56,14 @@
 
 // Not 100% correct, but helps in typical use case
 .fileupload-new .input-append .btn-file {
-  .border-radius(0 3px 3px 0)
+    .border-bottom-radius(3px);
+    .border-top-radius(0);
 }
 
 .thumbnail-borderless .thumbnail {
   border: none;
   padding: 0;
-  .border-radius(0);
+  border-radius: 0;
   .box-shadow(none);
 }
 .fileupload-new.thumbnail-borderless .thumbnail {

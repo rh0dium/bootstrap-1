@@ -10,7 +10,7 @@
 
 .datepicker {
 	padding: 4px;
-	.border-radius(4px);
+    border-radius: @border-radius-base;
 	&-inline {
 		width: 220px;
 	}
@@ -39,7 +39,7 @@
 			display: inline-block;
 			border-left:   6px solid transparent;
 			border-right:  6px solid transparent;
-			border-bottom: 6px solid @white;
+			border-bottom: 6px solid @body-bg;
 			border-top:    0;
 			position: absolute;
 		}
@@ -57,7 +57,7 @@
 		&.datepicker-orient-bottom:after {
 			bottom: -6px;
 			border-bottom: 0;
-			border-top:    6px solid @white;
+			border-top:    6px solid @body-bg;
 		}
 	}
 	>div {
@@ -86,8 +86,7 @@
 		text-align: center;
 		width: 20px;
 		height: 20px;
-		.border-radius(4px);
-
+        border-radius: @border-radius-base;
 		border: none;
 	}
 	// Inline display inside a table presents some problems with
@@ -99,17 +98,17 @@
 	}
 	table tr td {
 		&.day:hover {
-			background: @grayLighter;
+			background: @gray-lighter;
 			cursor: pointer;
 		}
 		&.old,
 		&.new {
-			color: @grayLight;
+			color: @gray-light;
 		}
 		&.disabled,
 		&.disabled:hover {
 			background: none;
-			color: @grayLight;
+			color: @gray-light;
 			cursor: default;
 		}
 		&.today,
@@ -131,8 +130,8 @@
 		&.range:hover,
 		&.range.disabled,
 		&.range.disabled:hover {
-			background:@grayLighter;
-			.border-radius(0);
+			background:@gray-lighter;
+            border-radius: 0;
 		}
 		&.range.today,
 		&.range.today:hover,
@@ -140,7 +139,7 @@
 		&.range.today.disabled:hover {
 			@todayBackground: mix(@orange, @grayLighter, 50%);
 			.buttonBackground(@todayBackground, spin(@todayBackground, 20));
-			.border-radius(0);
+            border-radius: 0;
 		}
 		&.selected,
 		&.selected:hover,
@@ -166,14 +165,14 @@
 			float: left;
 			margin: 1%;
 			cursor: pointer;
-			.border-radius(4px);
+            border-radius: @border-radius-base;
 			&:hover {
 				background: @grayLighter;
 			}
 			&.disabled,
 			&.disabled:hover {
 				background:none;
-				color: @grayLight;
+				color: @gray-light;
 				cursor: default;
 			}
 			&.active,
@@ -186,7 +185,7 @@
 			}
 			&.old,
 			&.new {
-				color: @grayLight;
+				color: @gray-light;
 			}
 		}
 	}
@@ -199,7 +198,7 @@
 	tfoot tr th {
 		cursor: pointer;
 		&:hover{
-			background: @grayLighter;
+			background: @gray-lighter;
 		}
 	}
 	/*.dow {
@@ -234,10 +233,12 @@
 		text-align:center;
 	}
 	input:first-child {
-		.border-radius(3px 0 0 3px);
+      .border-bottom-radius(0);
+      .border-top-radius(3px);
 	}
 	input:last-child {
-		.border-radius(0 3px 3px 0);
+      .border-bottom-radius(3px);
+      .border-top-radius(0);
 	}
 	.add-on {
 		display: inline-block;
@@ -248,9 +249,9 @@
 		font-weight: normal;
 		line-height: @baseLineHeight;
 		text-align: center;
-		text-shadow: 0 1px 0 @white;
+		text-shadow: 0 1px 0 @body-bg;
 		vertical-align: middle;
-		background-color: @grayLighter;
+		background-color: @gray-lighter;
 		border: 1px solid #ccc;
 		margin-left:-5px;
 		margin-right:-5px;
