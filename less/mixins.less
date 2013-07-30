@@ -83,6 +83,36 @@
 // CSS3 PROPERTIES
 // --------------------------------------------------
 
+// Four side border-radius
+.border-radius (@radius: @border-radius-base) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+.border-radiuses (@topright: @border-radius-base, @bottomright: @border-radius-base, @bottomleft: @border-radius-base, @topleft: @border-radius-base) {
+  -webkit-border-top-right-radius:    @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius:  @bottomleft;
+  -webkit-border-top-left-radius:     @topleft;
+
+  -moz-border-radius-topright:        @topright;
+  -moz-border-radius-bottomright:     @bottomright;
+  -moz-border-radius-bottomleft:      @bottomleft;
+  -moz-border-radius-topleft:         @topleft;
+
+  border-top-right-radius:            @topright;
+  border-bottom-right-radius:         @bottomright;
+  border-bottom-left-radius:          @bottomleft;
+  border-top-left-radius:             @topleft;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
 // Single side border-radius
 .border-top-radius(@radius) {
   border-top-right-radius: @radius;
@@ -228,14 +258,13 @@
 
 // GRADIENTS
 // --------------------------------------------------
-
 #gradient {
 
   // Horizontal gradient, from left to right
   //
   // Creates two color stops, start and end, by specifying a color and position for each color stop.
   // Color stops are not available in IE9 and below.
-  .horizontal(@start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) {
+  .horizontal(@start-color: #555, @start-percent: 0%, @end-color: #333, @end-percent: 100%) {
     background-color: @end-color;
     background-image: -webkit-gradient(linear, @start-percent top, @end-percent top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
     background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1+, Chrome 10+
@@ -249,7 +278,7 @@
   //
   // Creates two color stops, start and end, by specifying a color and position for each color stop.
   // Color stops are not available in IE9 and below.
-  .vertical(@start-color: #555; @start-percent: 0%; @end-color: #333; @end-percent: 100%) {
+  .vertical(@start-color: #555, @start-percent: 0%, @end-color: #333, @end-percent: 100%) {
     background-color: @end-color;
     background-image: -webkit-gradient(linear, left @start-percent, left @end-percent, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
     background-image: -webkit-linear-gradient(top, @start-color, @start-percent, @end-color, @end-percent); // Safari 5.1+, Chrome 10+
@@ -356,6 +385,21 @@
   }
   .alert-link {
     color: darken(@text-color, 10%);
+  }
+}
+// Button backgrounds
+// ------------------
+.buttonBackground(@startColor, @endColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  #gradient > .vertical(@startColor, @endColor, @textColor, @textShadow);
+  *background-color: @endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  .reset-filter();
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    color: @textColor;
+    background-color: @endColor;
+    *background-color: darken(@endColor, 5%);
   }
 }
 

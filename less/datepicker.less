@@ -115,7 +115,7 @@
 		&.today:hover,
 		&.today.disabled,
 		&.today.disabled:hover {
-			@todayBackground: lighten(@orange, 30%);
+			@todayBackground: lighten(@brand-warning, 30%);
 			.buttonBackground(@todayBackground, spin(@todayBackground, 20));
 			color: #000;
 		}
@@ -137,7 +137,7 @@
 		&.range.today:hover,
 		&.range.today.disabled,
 		&.range.today.disabled:hover {
-			@todayBackground: mix(@orange, @grayLighter, 50%);
+			@todayBackground: mix(@brand-warning, @gray-lighter, 50%);
 			.buttonBackground(@todayBackground, spin(@todayBackground, 20));
             border-radius: 0;
 		}
@@ -145,7 +145,7 @@
 		&.selected:hover,
 		&.selected.disabled,
 		&.selected.disabled:hover {
-			.buttonBackground(lighten(@grayLight, 10), darken(@grayLight, 10));
+			.buttonBackground(lighten(@gray-light, 10), darken(@gray-light, 10));
 			color: #fff;
 			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 		}
@@ -153,7 +153,7 @@
 		&.active:hover,
 		&.active.disabled,
 		&.active.disabled:hover {
-			.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+			.buttonBackground(@btn-primary-bg, spin(@btn-primary-bg, 20));
 			color: #fff;
 			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 		}
@@ -167,7 +167,7 @@
 			cursor: pointer;
             border-radius: @border-radius-base;
 			&:hover {
-				background: @grayLighter;
+				background: @gray-lighter;
 			}
 			&.disabled,
 			&.disabled:hover {
@@ -179,7 +179,7 @@
 			&.active:hover,
 			&.active.disabled,
 			&.active.disabled:hover {
-				.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+				.buttonBackground(@btn-primary-bg, spin(@btn-primary-bg, 20));
 				color: #fff;
 				text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 			}
@@ -244,10 +244,10 @@
 		display: inline-block;
 		width: auto;
 		min-width: 16px;
-		height: @baseLineHeight;
+		height: @line-height-base;
 		padding: 4px 5px;
 		font-weight: normal;
-		line-height: @baseLineHeight;
+		line-height: @line-height-base;
 		text-align: center;
 		text-shadow: 0 1px 0 @body-bg;
 		vertical-align: middle;
