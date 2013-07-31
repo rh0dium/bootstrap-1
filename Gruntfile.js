@@ -104,7 +104,15 @@ module.exports = function(grunt) {
                     flatten: true,
                     src: ['assets/font/*'],
                     dest: '../../sites/bootstrap_pivotalenergy_net/static/font/',
-                    filter: 'isFile'} ]
+                    filter: 'isFile'
+                },{
+                    expand: true,
+                    flatten: true,
+                    src: ['assets/css/font-awesome.css'],
+                    dest: '../../sites/bootstrap_pivotalenergy_net/static/css/',
+                    filter: 'isFile'}
+
+                ]
             }
         }
     });
