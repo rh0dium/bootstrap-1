@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                 stripBanners: false
             },
             bootstrap: {
-                src: ['js/transition.js', 'js/alert.js', 'js/button.js', 'js/carousel.js', 'js/collapse.js', 'js/dropdown.js', 'js/modal.js', 'js/tooltip.js', 'js/popover.js', 'js/scrollspy.js', 'js/tab.js', 'js/affix.js', 'js/datepicker.js'],
+                src: ['js/transition.js', 'js/alert.js', 'js/button.js', 'js/carousel.js', 'js/collapse.js', 'js/dropdown.js', 'js/modal.js', 'js/tooltip.js', 'js/popover.js', 'js/scrollspy.js', 'js/tab.js', 'js/affix.js', 'js/fileupload.js', 'js/datepicker.js'],
                 dest: '../../sites/bootstrap_pivotalenergy_net/static/js/<%= pkg.name %>.js'
             }
         },

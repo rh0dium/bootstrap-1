@@ -56,8 +56,8 @@
 
 // Not 100% correct, but helps in typical use case
 .fileupload-new .input-append .btn-file {
-    .border-bottom-radius(3px);
-    .border-top-radius(0);
+    .border-bottom-radius(@input-border-radius);
+    .border-top-radius(@input-border-radius);
 }
 
 .thumbnail-borderless .thumbnail {
@@ -70,39 +70,42 @@
   border: 1px solid #ddd;
 }
 
-.control-group.warning .fileupload {
+.form-group.has-warning .fileupload {
   .uneditable-input {
-    color: #a47e3c;
-    border-color: #a47e3c;
+    color: @btn-warning-color;
+    border-color: @btn-warning-border;
+    background-color: @btn-warning-bg;
   }
   .fileupload-preview {
-    color: #a47e3c;
+    color: @btn-warning-color;
   }
   .thumbnail {
-    border-color: #a47e3c;
+    border-color: @btn-warning-border;
   }
 }
-.control-group.error .fileupload {
+.form-group.has-error .fileupload {
   .uneditable-input {
-    color: #b94a48;
-    border-color: #b94a48;
+    color: @btn-danger-color;
+    border-color: @btn-danger-border;
+    background-color: @btn-danger-bg;
   }
   .fileupload-preview {
-    color: #b94a48;
+    color: @btn-danger-color;
   }
   .thumbnail {
-    border-color: #b94a48;
+    border-color: @btn-danger-border;
   }
 }
-.control-group.success .fileupload {
+.form-group.has-success .fileupload {
   .uneditable-input {
-    color: #468847;
-    border-color: #468847;
+    color: @btn-success-color;
+    border-color: @btn-success-border;
+    background-color: @btn-success-bg;
   }
   .fileupload-preview {
-    color: #468847;
+    color: @btn-success-color;
   }
   .thumbnail {
-    border-color: #468847;
+    border-color: @btn-success-border;
   }
 }
