@@ -41,6 +41,7 @@ module.exports = function (grunt) {
 
     jshint: {
       options: {
+        ignores: ['js/datepicker.js'], // HACK: workaround https://github.com/gruntjs/grunt-contrib-jshint/issues/86
         jshintrc: 'js/.jshintrc'
       },
       grunt: {
@@ -62,6 +63,7 @@ module.exports = function (grunt) {
 
     jscs: {
       options: {
+        excludeFiles: ['**/datepicker.js', '**/fileupload.js'],
         config: 'js/.jscsrc'
       },
       grunt: {
@@ -103,7 +105,9 @@ module.exports = function (grunt) {
           'js/popover.js',
           'js/scrollspy.js',
           'js/tab.js',
-          'js/affix.js'
+          'js/affix.js',
+          'js/datepicker.js',
+          'js/fileupload.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }
