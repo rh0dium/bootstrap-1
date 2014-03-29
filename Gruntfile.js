@@ -109,7 +109,7 @@ module.exports = function (grunt) {
           'js/datepicker.js',
           'js/fileupload.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.name %>-<%= pkg.version %>.js'
       }
     },
 
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
           banner: '<%= banner %>'
         },
         src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/js/<%= pkg.name %>-<%= pkg.version %>.min.js'
       },
       customize: {
         options: {
@@ -161,11 +161,11 @@ module.exports = function (grunt) {
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          sourceMapURL: '<%= pkg.name %>-<%= pkg.version %>.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-<%= pkg.version %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/bootstrap.less'
+          'dist/css/<%= pkg.name %>-<%= pkg.version %>.css': 'less/bootstrap.less'
         }
       },
       compileTheme: {
@@ -222,7 +222,7 @@ module.exports = function (grunt) {
     cssflip: {
       rtl: {
         files: {
-          'dist/css/<%= pkg.name %>-rtl.css': 'dist/css/<%= pkg.name %>.css'
+          'dist/css/<%= pkg.name %>-<%= pkg.version %>-rtl.css': 'dist/css/<%= pkg.name %>-<%= pkg.version %>.css'
         }
       }
     },
