@@ -13,7 +13,7 @@
     </div>
     <div class="col-sm-4">
       <h3 id="download-source">Source code</h3>
-      <p>Source Less, JavaScript, and font files, along with our docs. <strong>Requires a Less compiler and <a href="{{ site.repo }}#compiling-css-and-javascript">some setup.</a></strong></p>
+      <p>Source Less, JavaScript, and font files, along with our docs. <strong>Requires a Less compiler and <a href="#grunt">some setup.</a></strong></p>
       <p>
         <a href="{{ site.download.source }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Getting started', 'Download', 'Download source');">Download source</a>
       </p>
@@ -41,6 +41,9 @@
 {% endhighlight %}
 
   <h3 id="download-bower">Install with Bower</h3>
-  <p>Install and manage Bootstrap's Less, CSS, JavaScript, and fonts using <a href="http://bower.io">Bower</a>.</p>
+  <p>You can also install and manage Bootstrap's Less, CSS, JavaScript, and fonts using <a href="http://bower.io">Bower</a>:</p>
   {% highlight bash %}$ bower install bootstrap{% endhighlight %}
+
+  <h3 id="download-autoprefixer">Autoprefixer required for Less/Sass</h3>
+  <p>Bootstrap uses <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> to deal with <a href="http://webdesign.about.com/od/css/a/css-vendor-prefixes.htm">CSS vendor prefixes</a>. If you're compiling Bootstrap from its Less/Sass source and not using our Gruntfile, you'll need to integrate Autoprefixer into your build process yourself. If you're using precompiled Bootstrap or using our Gruntfile, you don't need to worry about this because Autoprefixer is already integrated into our Gruntfile.</p>
 </div>
